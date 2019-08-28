@@ -1,0 +1,27 @@
+<div class="row pt-5">
+    <div class="col-md-6 mx-auto">
+        <div class="card rounded-0">
+            <div class="card-header">
+                <h3>login</h3>
+            </div>
+            <div class="card-body">
+                <form action="" class="form">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input [(ngModel)]="loginData.email" type="text" name="firstName" id=""
+                                class="form-control rouded-0" required>
+                        </div>
+
+                        <div class="form-group"><label for="">Password</label>
+                            <input [(ngModel)]="loginData.password" type="text" name="lastName" id=""
+                                class="form-control rounded-0" required>
+                        </div>
+
+                    </div>
+                    <button (click)="logIn()" class="btn btn-primary float-right">login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
