@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,14 @@ import { EventsComponent } from './events/events.component';
 import { SpecialComponent } from './special/special.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import { EventService } from './event.service';
+
 
 @NgModule({
   declarations: [
@@ -23,9 +31,16 @@ import { AuthService } from './auth.service';
     BrowserModule,
     AppRoutingModule, 
     FormsModule, 
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule, 
+    MatInputModule, 
+    MatButtonModule, 
+    MatCheckboxModule, 
+    MatChipsModule, 
+    MatCardModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, EventService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

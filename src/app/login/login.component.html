@@ -1,27 +1,37 @@
-<div class="row pt-5">
-    <div class="col-md-6 mx-auto">
-        <div class="card rounded-0">
-            <div class="card-header">
-                <h3>login</h3>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <mat-card class="md-6">
+      <div class="row">
+        <div class="col md-6">
+          <mat-card-title>Login Form</mat-card-title>
+          <form (ngSubmit)="login()" [formGroup]="loginForm">
+            <div>
+              <label for="email">Email</label>
+              <input type="text" formControlName="email" class="form-control" />
             </div>
-            <div class="card-body">
-                <form action="" class="form">
-                    <div class="form-group">
-                        <div class="form-group">
-                            <label for="">Email</label>
-                            <input [(ngModel)]="loginData.email" type="text" name="firstName" id=""
-                                class="form-control rouded-0" required>
-                        </div>
 
-                        <div class="form-group"><label for="">Password</label>
-                            <input [(ngModel)]="loginData.password" type="text" name="lastName" id=""
-                                class="form-control rounded-0" required>
-                        </div>
-
-                    </div>
-                    <button (click)="logIn()" class="btn btn-primary float-right">login</button>
-                </form>
+            <div>
+              <label for="email">Password</label>
+              <input
+                type="password"
+                formControlName="password"
+                class="form-control"
+              />
             </div>
+
+            <div class="pt-2">
+              <button class="btn btn-primary">Submit</button>
+            </div>
+          </form>
         </div>
-    </div>
-</div>
+      </div>
+    </mat-card>
+  </body>
+</html>

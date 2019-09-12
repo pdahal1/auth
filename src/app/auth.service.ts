@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
   readonly url = "http://localhost:3000/register"; 
+  readonly loginurl = "http://localhost:3000/register/login"; 
 
   constructor(private http: HttpClient) { }
 
@@ -14,8 +15,12 @@ export class AuthService {
   }; 
 
   login(user){
-    const _url= `{this.url}/{login}`;
-    return this.http.post<any>( _url, user)
+   
+    return this.http.post<any>( this.loginurl, user)
+  }
+
+  loggedIn(){
+    return !!localStorage.getItem('token')
   }
 
 }

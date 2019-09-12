@@ -1,41 +1,73 @@
-<div class="row pt-5" >
-        <div class="col-md-6 mx-auto">
-          <div class="card rounded-0">
-            <div class="card-header">
-              <h3>Register</h3>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Register Form</h1>
+      <div class="row">
+        <div class="col 10">
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="firstName">first name</label>
+              <input
+                formControlName="firstName"
+                type="text"
+                class="form-control"
+              />
             </div>
-            <div class="card-body">
-              <form action="" class="form">
-                <div class="form-group">
-      
-      
-      
-                  <div class="form-group">
-                    <label for="">First Name</label>
-                    <input [(ngModel)] = "registerUserData.firstName" type="text" name="firstName" id="" class="form-control rouded-0" required>
-                  </div>
-      
-                  <div class="form-group"><label for="">Last Name</label>
-                    <input [(ngModel)] = "registerUserData.lastName" type="text" name="lastName" id="" class="form-control rounded-0" required>
-                  </div>
-      
-      
-                  <div class="form-group">
-                    <label for="">Phone</label>
-                    <input [(ngModel)] = "registerUserData.phone" type="text" name="Phone" id="" class="form-control rouded-0" required>
-                  </div>
-                  <label for="">email</label>
-                  <input  [(ngModel)] = "registerUserData.email" type="text" name="email" id="" class="form-control rouded-0" required>
-                </div>
-      
-                <div class="form-group"><label for="">password</label>
-                  <input  [(ngModel)] = "registerUserData.password" type="password" name="password" id="" class="form-control rounded-0" required>
-                </div>
-      
-      
-                <button  (click) = "registerUser()" class="btn btn-primary float-right">Register</button>
-              </form>
+
+            <div class="form-group">
+              <label for="lastName">Last name</label>
+              <input
+                formControlName="lastName"
+                type="text"
+                name="lastName"
+                id="lastName"
+                class="form-control"
+              />
             </div>
-          </div>
+
+            <div class="form-group">
+              <label for="phone">Phone </label>
+              <input
+                formControlName="phone"
+                type="text"
+                name="phone"
+                id="phone"
+                class="form-control"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email"> Email</label>
+              <input
+                formControlName="email"
+                type="text"
+                name="email"
+                id="email"
+                class="form-control"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="password">password</label>
+              <input
+                formControlName="password"
+                type="text"
+                name="password"
+                id="password"
+                class="form-control"
+              />
+            </div>
+            <button class="btn btn-success">Submit</button>
+          </form>
         </div>
       </div>
+    </div>
+  </body>
+</html>

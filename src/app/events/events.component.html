@@ -1,5 +1,13 @@
-<p>events works!</p>
-
-<div>
-    <nav class="navbar-brand">event</nav>
-</div>
+<div class="row mt-5">
+        <div class="col-md-2 mb-3" *ngFor="let events of events">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title" >{{ events.firstName}}</h5>
+              <p class="card-text">{{ events.lastName }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
