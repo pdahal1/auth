@@ -1,0 +1,58 @@
+<p>viewaccount works!</p>
+
+<div>
+  <div>
+    <h1>View Account form</h1>
+  </div>
+  <form [formGroup]="viewAccountform">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" formControlName="email" id="" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="email">password</label>
+      <input
+        type="text"
+        formControlName="password"
+        id=""
+        class="form-control"
+      />
+    </div>
+    <button class="btn btn-success" (click)="onSubmit()">Submit</button>
+  </form>
+</div>
+
+<html>
+   <title>Element toggle in angular</title>
+   <body>
+      <div [hidden] = !show><div>
+        {{ AccountDetail.email }} <br />
+        {{ AccountDetail.firstName }} <br />
+        {{ AccountDetail.lastName }} <br />
+        {{ AccountDetail.phone }} <br />
+        {{ AccountDetail.password }} <br />
+</div></div>
+      <button (click) = "shows()">Toggle</button>
+   </body>
+</html>
+
+
+
+<!-- <div>
+  <table>
+    <thead>
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Phone</td>
+      <td>Email</td>
+      
+    </thead>
+    <tbody>
+      <td>{{AccountDetail.firstName}}</td>
+      <td>{{AccountDetail.lastName}}</td>
+      <td>{{AccountDetail.phone}}</td>
+      <td>{{AccountDetail.email}}</td>
+     
+    </tbody>
+  </table>
+</div> -->

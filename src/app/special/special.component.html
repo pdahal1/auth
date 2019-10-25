@@ -1,8 +1,13 @@
+<div class="Heading pt-5 ">
+    <h4>Following are the Special events</h4>
+
+</div>
 <div class="row mt-5">
-  <div class="col-md-2 mb-3" *ngFor="let specialEvent of specialEvent">
+    <div class="col-md-2 mb-3" *ngFor="let specialEvent of specialEvent">
     <div class="card text-center">
       <div class="card-body">
-        <h5 class="card-title">Beold the special King/ Queen {{ specialEvent.firstName }}</h5>
+        <h5 class="card-title">Member :  </h5>
+        {{ specialEvent.firstName }}
         <p class="card-text">{{ specialEvent.lastName }}</p>
       </div>
     </div>

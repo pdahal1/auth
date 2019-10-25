@@ -1,39 +1,94 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNav"
-    aria-controls="navbarNav"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <div>
-        <li class="nav-item active ">
-          <a [routerLink]="['/register']" routerLinkActive="active">Register</a>
+
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Home</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li>
+          <div>
+            <li class="nav-item active">
+             
+              <a [routerLink]="['/register']" routerLinkActive="active" *ngIf="!authService.loggedIn()"
+                >Register</a
+              >
+            </li>
+          </div>
         </li>
-      </div>
 
-      <div>
-        <li class="nav-item active pl-2">
-          <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
-        </li>
-      </div>
+        <div>
+          <ul>
+            <a [routerLink]="['/login']" routerLinkActive="active" *ngIf="!authService.loggedIn()">Login</a>
+          </ul>
+        </div>
 
-      <li class="nav-item active">
-        <a [routerLink]="['/special']" routerLinkActive="active">Special</a>
-      </li>
-      <li class="nav-item active">
-        <a [routerLink]="['/events']" routerLinkActive="active">Events</a>
-      </li>
-    </ul>
+        <div>
+          <ul>
+            <a [routerLink]="['/listings']" routerLinkActive="active" *ngIf="!authService.loggedIn()">Listings</a>
+          </ul>
+        </div>
+
+        <div>
+          <ul>
+            <a [routerLink]="['/special']" routerLinkActive="active" *ngIf="authService.loggedIn()">Listing(special)</a>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <a [routerLink]="['/events']" routerLinkActive="active" *ngIf="authService.loggedIn()"
+              >Listing (regular)</a>
+          </ul>
+        </div>
+        <!-- <div>
+          <ul>
+            <a [routerLink]="['/account']" routerLinkActive="active">Account</a>
+          </ul>
+        </div> -->
+        <div>
+          <ul>
+            <a [routerLink]="['/viewaccount']" routerLinkActive="active" *ngIf="authService.loggedIn()">view Account</a>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <button *ngIf="authService.loggedIn()" (click)= "authService.logoutUser()">Logout</button>
+          </ul>
+        </div>
+      </ul>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+
+  <div class="container">
+    <div class="heading">
+      <h5 class="heading " style="color: blue">
+        Welcome To Kathmandu
+      </h5>
+    </div>
   </div>
-</nav>
 
-<router-outlet></router-outlet>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col md-6">
+        <img
+          src="http://www.natgeotraveller.in/wp-content/uploads/2017/01/bhaktapur_1024x768.jpg"
+          alt=""
+        />
+      </div> -->
+      <div class="col md-2"></div>
+    </div>
+  </div>
+</div>

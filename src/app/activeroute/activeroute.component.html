@@ -1,0 +1,10 @@
+<p>activeroute works!</p>
+
+<ul *ngFor="let department of department">
+    <li (click)="onSelect(department)">
+        {{department.id}} {{department.name}}
+
+
+    </li>
+</ul>
+
